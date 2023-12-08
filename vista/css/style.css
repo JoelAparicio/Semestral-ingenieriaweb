@@ -229,37 +229,37 @@ html, body {
 }
 .details-button {
     padding: 10px 20px;
-    background-color: #007bff; /* Color de fondo del botón */
-    color: white; /* Color del texto */
+    background-color: #007bff;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px; /* Espacio entre el título y el botón */
+    margin-top: 10px;
     text-align: center;
     text-decoration: none;
-    display: inline-block; /* Asegúrate de que se comporta como un botón */
+    display: inline-block;
     font-size: 1rem;
 }
 
 .details-button:hover {
-    background-color: #0056b3; /* Color de fondo del botón al pasar el cursor */
+    background-color: #0056b3;
 }
 .product-details {
-    display: none; /* Oculto por defecto */
-    background-color: #9FB7C9; /* Fondo claro */
+    display: none;
+    background-color: #9FB7C9;
     padding: 10px;
-    margin: 10px auto; /* Centra el bloque */
-    text-align: center; /* Texto centrado */
+    margin: 10px auto;
+    text-align: center;
     border-radius: 7px;
-    width: 20%; /* Limita el ancho, ajústalo según tus necesidades */
+    width: 20%;
 
 }
 
 .testimonials-section {
     text-align: center;
     padding: 40px;
-    background-color: #f8f8f8; /* Color de fondo suave */
-    color: #333; /* Color de texto oscuro para contraste */
+    background-color: #f8f8f8;
+    color: #333;
 }
 
 .testimonials-section h2 {
@@ -270,15 +270,15 @@ html, body {
 .testimonial {
     margin-bottom: 20px;
     padding: 20px;
-    border: 1px solid #ddd; /* Borde sutil */
-    background-color: white; /* Fondo blanco para destacar del fondo de la sección */
-    display: inline-block; /* Centra los testimonios en la sección */
-    max-width: 600px; /* Limita el ancho para mejorar la legibilidad */
+    border: 1px solid #ddd;
+    background-color: white;
+    display: inline-block;
+    max-width: 600px;
 }
 
 .testimonial blockquote {
-    font-style: italic; /* Estilo de cita */
-    color: #555; /* Color de texto más suave */
+    font-style: italic;
+    color: #555;
 }
 
 .client-name {

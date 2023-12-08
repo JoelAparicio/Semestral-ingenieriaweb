@@ -28,6 +28,13 @@
         <div class="carousel-item" data-index="1">
             <img src="https://img.freepik.com/fotos-premium/plantilla-maqueta-maqueta-hombre-camiseta-negra-sus-disenos_398492-4748.jpg" alt="Producto 2">
             <h2>Camiseta negra</h2>
+            <button class="details-button" onclick="toggleDetails(0)">Ver más detalles</button>
+            <div class="product-details" id="details0">
+                <p>Talla: M</p>
+                <p>Color: Azul</p>
+                <p>Stock: Disponible</p>
+                <!-- Más detalles aquí -->
+            </div>
         </div>
         <!-- Agrega más elementos de carrusel según sea necesario -->
     </div>
