@@ -1,7 +1,5 @@
 <?php
-
 class base_de_datos{
-
     private $host = "tu_host";  // Ejemplo: 'localhost'
     private $db_name = "nombre_de_tu_base_de_datos";
     private $username = "tu_usuario";
@@ -20,13 +18,11 @@ class base_de_datos{
 
         return $this->conn;
     }
-
     // Método para cerrar la conexión
     public function closeConnection() {
         $this->conn = null;
     }
 }
-
 
 // Uso de la clase Base_de_datos:
 // $baseDeDatos = new Base_de_datos();
