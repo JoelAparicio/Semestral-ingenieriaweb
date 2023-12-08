@@ -34,7 +34,7 @@
         </div>
         <div class="cart-container">
             <img src="../img/carrito.png" alt="Carrito" id="shoppingCart">
-            <span class="cart-badge">3</span> <!-- Etiqueta para la cantidad de artículos -->
+            <span class="cart-badge">0</span> <!-- Etiqueta para la cantidad de artículos -->
         </div>
     </div>
 </header>

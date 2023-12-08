@@ -161,14 +161,14 @@ html, body {
     background-color: #333;
     color: white;
     padding: 20px;
-    width: 100%; /* Ajusta este valor según el ancho deseado */
-    margin: auto; /* Centra el footer horizontalmente */
+    width: 100%;
+    margin: auto;
     display: flex;
-    justify-content: space-between; /* Distribuye el espacio entre las secciones */
+    justify-content: space-between;
 }
 
 .footer .footer-section {
-    flex-basis: 30%; /* Ajusta la base del flex para cada sección del footer */
+    flex-basis: 30%;
 }
 
 .footer h3 {
@@ -181,11 +181,110 @@ html, body {
 }
 
 .footer a img {
-    height: 40px; /* Ajusta el tamaño de las imágenes de las redes sociales */
+    height: 40px;
 }
 
-
-/* Añade estilos adicionales según necesites */
-
-
 /* Estilo de Footer */
+
+/* Estilo de index.php */
+
+.popular-items-carousel {
+    text-align: center;
+    margin: 20px 0;
+    flex: 1;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.carousel-item {
+    min-width: 100%; /* Asegura que cada item ocupe toda la anchura del contenedor del carrusel */
+    text-align: center;
+}
+
+.carousel-item img {
+    width: auto; /* O un tamaño específico si es necesario */
+    max-height: 500px; /* Ajusta según tus necesidades */
+}
+
+.carousel-control {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+.details-button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Espacio entre el título y el botón */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; /* Asegúrate de que se comporta como un botón */
+    font-size: 1rem;
+}
+
+.details-button:hover {
+    background-color: #0056b3; /* Color de fondo del botón al pasar el cursor */
+}
+.product-details {
+    display: none; /* Oculto por defecto */
+    background-color: #9FB7C9; /* Fondo claro */
+    padding: 10px;
+    margin: 10px auto; /* Centra el bloque */
+    text-align: center; /* Texto centrado */
+    border-radius: 7px;
+    width: 20%; /* Limita el ancho, ajústalo según tus necesidades */
+
+}
+
+.testimonials-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #f8f8f8; /* Color de fondo suave */
+    color: #333; /* Color de texto oscuro para contraste */
+}
+
+.testimonials-section h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.testimonial {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd; /* Borde sutil */
+    background-color: white; /* Fondo blanco para destacar del fondo de la sección */
+    display: inline-block; /* Centra los testimonios en la sección */
+    max-width: 600px; /* Limita el ancho para mejorar la legibilidad */
+}
+
+.testimonial blockquote {
+    font-style: italic; /* Estilo de cita */
+    color: #555; /* Color de texto más suave */
+}
+
+.client-name {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilo de index.php */
