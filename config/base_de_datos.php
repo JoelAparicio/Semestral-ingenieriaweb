@@ -30,3 +30,5 @@ class base_de_datos{
 
 // Para cerrar la conexión:
 // $baseDeDatos->closeConnection();
+
+
