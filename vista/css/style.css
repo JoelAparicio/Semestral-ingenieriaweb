@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Establece la altura del HTML y BODY al 100% */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en una columna */
+    background-color: #e1d6b6; /* Tu color de fondo */
+    font-family: Arial, sans-serif; /* Tu fuente */
+}
+
+
+/* Estilo de Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8ebe7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+}
+
+.logo-container {
+    padding-left: 2rem;
+}
+
+.logo-container img {
+    height: 6.25rem;
+}
+
+.nav-menu .category-list {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu .category-list li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem; /* Aumentado para mayor legibilidad */
+    padding: 0.3125rem 0.625rem;
+}
+
+.nav-menu .category-list li a:hover {
+    color: #007bff;
+}
+
+.user-cart {
+    display: flex;
+    gap: 0.625rem;
+    align-items: center;
+}
+
+.user-cart img {
+    height: 3.75rem;
+    cursor: pointer;
+    padding-right: 2rem;
+}
+
+.user-panel-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 1000;
+    min-width: 9.375rem;
+}
+
+.user-dropdown-menu a {
+    display: block;
+    padding: 0.625rem 1.25rem;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+}
+
+.user-dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+.category-container {
+    margin-right: auto;
+    padding-left: 17rem;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#categoryButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px; /* Botón más grande */
+    border-radius: 4px;
+    font-size: 1.2rem; /* Texto más grande */
+    cursor: pointer;
+}
+
+.category-dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    white-space: nowrap;
+}
+
+.category-dropdown-menu a {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: white;
+    background-color: #2f65ff;
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
+    margin-left: 45px;
+}
+
+.category-dropdown-menu a:hover {
+    background-color: #000000;
+}
+
+.cart-container {
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: 29px;
+    background-color: red;
+    color: white;
+    border-radius: 55%;
+    padding: 2px;
+    font-size: 0.8rem;
+    min-width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo de Header */
+
+
+/* Estilo de Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    width: 100%; /* Ajusta este valor según el ancho deseado */
+    margin: auto; /* Centra el footer horizontalmente */
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre las secciones */
+}
+
+.footer .footer-section {
+    flex-basis: 30%; /* Ajusta la base del flex para cada sección del footer */
+}
+
+.footer h3 {
+    margin-top: 0;
+}
+
+.footer a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer a img {
+    height: 40px; /* Ajusta el tamaño de las imágenes de las redes sociales */
+}
+
+
+/* Añade estilos adicionales según necesites */
+
+
+/* Estilo de Footer */
