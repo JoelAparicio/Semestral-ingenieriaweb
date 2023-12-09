@@ -1,9 +1,9 @@
 <?php
 class base_de_datos{
-    private $host = "tu_host";  // Ejemplo: 'localhost'
-    private $db_name = "nombre_de_tu_base_de_datos";
-    private $username = "tu_usuario";
-    private $password = "tu_contraseña";
+    private $host = "localhost";  // Ejemplo: 'localhost'
+    private $db_name = "glamgrid";
+    private $username = "root";
+    private $password = "";
     public $conn;
     // Método para abrir la conexión
     public function getConnection() {

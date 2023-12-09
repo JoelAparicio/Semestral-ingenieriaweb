@@ -153,6 +153,18 @@ html, body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
+#initButton{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin-right: 50px;
+    margin-left: -50px;
+    padding: 12px 24px; /* Botón más grande */
+    border-radius: 4px;
+    font-size: 1.2rem; /* Texto más grande */
+    cursor: pointer;
+}
+
 /* Estilo de Header */
 
 
@@ -288,3 +300,125 @@ html, body {
 }
 
 /* Estilo de index.php */
+
+/* Estilo de login.php */
+.login-container {
+    flex: 1;
+    max-width: 400px;
+    margin: 50px auto;
+    margin-bottom: 308px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.btn-registro {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-registro:hover {
+    background-color: #45a049;
+}
+
+/* Estilo de login.php */
+
+/* Estilos para el registro */
+.registro-container {
+    max-width: 400px;
+    margin: 50px auto;
+    margin-bottom: 233px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.registro-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el registro */

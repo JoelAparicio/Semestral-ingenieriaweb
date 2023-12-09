@@ -29,8 +29,8 @@
         <div class="user-panel-container">
             <img src="../img/usuario.png" alt="Panel de Usuario" id="userPanel">
             <div class="user-dropdown-menu" id="userMenu">
-                <a href="login.php">Iniciar sesión</a>
-                <a href="registro.php">Registrarse</a>
+                <a href="#">Ver perfil</a>
+                <a href="#">Cerrar sesión</a>
             </div>
         </div>
         <div class="cart-container">
@@ -70,7 +70,7 @@
             window.location.href = 'ruta/a/tu/pagina/del/carrito.html';
         });
         initButton.addEventListener('click', function() {
-            window.location.href = 'index.php';
+            window.location.href = 'indexadmin.php';
         });
     });
 
