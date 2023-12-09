@@ -28,9 +28,14 @@
     <div class="user-cart">
         <div class="user-panel-container">
             <img src="../img/usuario.png" alt="Panel de Usuario" id="userPanel">
+            <p id="nombreUsuario">Bienvenido, <?php
+                if (isset($_SESSION['username'])) {
+                    echo htmlspecialchars($_SESSION['username']);
+                }
+                ?></button></p>
             <div class="user-dropdown-menu" id="userMenu">
-                <a href="#">Ver perfil</a>
-                <a href="#">Cerrar sesión</a>
+                <a href="verperfil.php">Ver perfil</a>
+                <a href="../usuario/index.php">Cerrar sesión</a>
             </div>
         </div>
         <div class="cart-container">
