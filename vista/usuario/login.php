@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -14,7 +17,7 @@
 <div class="login-container">
     <form action="../../backend/loginbackend.php" method="POST">
         <h2>Iniciar Sesión</h2>
-        <?php session_start();
+        <?php
         if (isset($_SESSION['errorMessage'])) {
         echo "<p class='error'>{$_SESSION['errorMessage']}</p>";
         unset($_SESSION['errorMessage']); // Limpia el mensaje de error
