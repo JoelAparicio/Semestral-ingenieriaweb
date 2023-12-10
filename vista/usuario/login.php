@@ -16,9 +16,15 @@
         <h2>Iniciar Sesión</h2>
         <?php session_start();
         if (isset($_SESSION['errorMessage'])) {
-            echo "<p class='error'>{$_SESSION['errorMessage']}</p>";
-            unset($_SESSION['errorMessage']); // Limpieza el mensaje de error
-        }?>
+        echo "<p class='error'>{$_SESSION['errorMessage']}</p>";
+        unset($_SESSION['errorMessage']); // Limpia el mensaje de error
+        }
+
+        if (isset($_SESSION['UpdateMessage'])) {
+        echo "<p class='update'>{$_SESSION['UpdateMessage']}</p>";
+         unset($_SESSION['UpdateMessage']); // Limpia el mensaje de actualización
+            }
+        ?>
         <div class="form-group">
             <label for="username">Nombre de Usuario:</label>
             <input type="text" id="username" name="username" required>

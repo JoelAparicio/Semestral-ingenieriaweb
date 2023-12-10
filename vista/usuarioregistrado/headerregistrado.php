@@ -30,7 +30,8 @@
             <img src="../img/usuario.png" alt="Panel de Usuario" id="userPanel">
             <p id="nombreUsuario">Bienvenido, <?php
                 if (isset($_SESSION['username'])) {
-                    echo htmlspecialchars($_SESSION['username']);
+                    $usuario= htmlspecialchars($_SESSION['username']);
+                    echo $usuario;
                 }
                 ?></button></p>
             <div class="user-dropdown-menu" id="userMenu">
