@@ -12,7 +12,7 @@
 <?php include_once "headeradmin.php"; ?>
 
 <div class="popular-items-carousel">
-    <h1>Compras Más Populares</h1>
+    <h1>COMPRAS MAS POPULARES</h1>
     <div class="carousel" id="popularCarousel">
         <div class="carousel-item" data-index="0">
             <img src="https://m.media-amazon.com/images/I/71xdSLvi8ML._AC_UF894,1000_QL80_.jpg" alt="Producto 1">
@@ -32,6 +32,28 @@
             <div class="product-details" id="details0">
                 <p>Talla: M</p>
                 <p>Color: Azul</p>
+                <p>Stock: Disponible</p>
+                <!-- Más detalles aquí -->
+            </div>
+        </div>
+        <div class="carousel-item" data-index="2">
+            <img src="https://media.rpctv.com/p/927388232b42346a148b3aca0efae546/adjuntos/314/imagenes/018/167/0018167218/1200x675/smart/camiseta-panama-nueva.jpeg" alt="Producto 1">
+            <h2>Camiseta de Panamá</h2>
+            <button class="details-button" onclick="toggleDetails(2)">Ver más detalles</button>
+            <div class="product-details" id="details2">
+                <p>Talla: M</p>
+                <p>Color: Roja</p>
+                <p>Stock: Disponible</p>
+                <!-- Más detalles aquí -->
+            </div>
+        </div>
+        <div class="carousel-item" data-index="3">
+            <img src="https://phantom-expansion.unidadeditorial.es/be8f77e4a9d02a0a552403f67497009f/resize/828/f/jpg/assets/multimedia/imagenes/2022/11/23/16691993780157.jpg" alt="Producto 2">
+            <h2>Zapatos de hombre</h2>
+            <button class="details-button" onclick="toggleDetails(3)">Ver más detalles</button>
+            <div class="product-details" id="details3">
+                <p>Talla: 44</p>
+                <p>Color: Negro</p>
                 <p>Stock: Disponible</p>
                 <!-- Más detalles aquí -->
             </div>
@@ -87,14 +109,25 @@
 
 
 <script>
-    function moveCarousel(direction) {
-        var carousel = document.getElementById('popularCarousel');
-        var scrollAmount = carousel.offsetWidth;
-        if (direction === 'next') {
-            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        } else {
-            carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+function moveCarousel(direction) {
+    var carousel = document.getElementById('popularCarousel');
+    var scrollAmount = carousel.offsetWidth;
+
+    if (direction === 'next') {
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+
+        // Si llegamos al final, volvemos al principio
+        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+            carousel.scrollTo({ left: 0, behavior: 'smooth' });
         }
+    } else {
+        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+
+        // Si estamos al principio, nos movemos al final
+        if (carousel.scrollLeft === 0) {
+            carousel.scrollTo({ left: carousel.scrollWidth, behavior: 'smooth' });
+        }
+    }
     }
     function toggleDetails(index) {
         var detailsDiv = document.getElementById('details' + index);

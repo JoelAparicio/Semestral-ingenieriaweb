@@ -8,8 +8,8 @@ html, body {
     padding: 0;
     display: flex;
     flex-direction: column; /* Organiza los elementos en una columna */
-    background-color: #e1d6b6; /* Tu color de fondo */
-    font-family: Arial, sans-serif; /* Tu fuente */
+    background-color: #ffffff; /* Tu color de fondo */
+    font-family: "Work Sans"; /* Tu fuente */
 }
 
 
@@ -18,7 +18,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f8ebe7;
+    background-color: #4E84A6;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem 2rem;
 }
@@ -92,47 +92,48 @@ html, body {
     background-color: #f5f5f5;
 }
 
-.category-container {
-    margin-right: auto;
-    padding-left: 17rem;
-    position: relative;
-    cursor: pointer;
+.category-container{
+    max-width: 900px;
+    margin: auto;
+    background-color: #4E84A6;
+    font-size: 20px;
+    margin-top: 50px;
+}
+.menu-horizontal{
+    list-style:none;
     display: flex;
-    align-items: center;
+    justify-content: space-around;
 }
-
-#categoryButton {
-    background-color: #007bff;
+.menu-horizontal > li >a{
+    display: block;
+    padding: 15px;
     color: white;
-    border: none;
-    padding: 12px 24px; /* Botón más grande */
-    border-radius: 4px;
-    font-size: 1.2rem; /* Texto más grande */
-    cursor: pointer;
-}
-
-.category-dropdown-menu {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    white-space: nowrap;
-}
-
-.category-dropdown-menu a {
-    display: inline-block;
-    padding: 12px 24px;
     text-decoration: none;
+}
+.menu-horizontal > li:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.menu-vertical{
+    position: absolute;
+    color: #ffffff;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(78, 132, 166, 0.9);
+}
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+}
+.menu-vertical li:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.menu-vertical li a{
+    display: block;
     color: white;
-    background-color: #2f65ff;
-    font-size: 1.2rem;
-    border: 1px solid #ddd;
-    margin-left: 45px;
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
 }
 
-.category-dropdown-menu a:hover {
-    background-color: #000000;
-}
 
 .cart-container {
     position: relative;
@@ -224,6 +225,7 @@ html, body {
 .carousel-item img {
     width: auto; /* O un tamaño específico si es necesario */
     max-height: 500px; /* Ajusta según tus necesidades */
+    border-radius: 20px;
 }
 
 .carousel-control {

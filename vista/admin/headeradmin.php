@@ -15,14 +15,18 @@
     </div>
 
     <div class="category-container">
-        <button id="initButton">Inicio</button>
-        <button id="categoryButton">Categorias de ropa</button>
-        <div class="category-dropdown-menu" id="categoryMenu">
-            <a href="#">Camisas</a>
-            <a href="#">Pantalones</a>
-            <a href="#">Zapatos</a>
-            <a href="#">Camisetas</a>
-        </div>
+       <ul class="menu-horizontal">
+            <li><a href="">INICIO</a></li>
+            <li>
+                <a href="">CATEGORIAS DE ROPA</a>
+                <ul class="menu-vertical">
+                    <li><a href=""></a>CAMISAS</li>
+                    <li><a href=""></a>PANTALONES</li>
+                    <li><a href=""></a>ZAPATOS</li>
+                    <li><a href=""></a>CAMISETAS</li>
+                </ul>
+            </li>
+       </ul>
     </div>
 
     <div class="user-cart">
