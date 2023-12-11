@@ -10,7 +10,6 @@ if ($nombreUsuario) {
     $baseDeDatos = new base_de_datos();
     $db = $baseDeDatos->getConnection();
 
-    // Obtener ID_Usuario a partir del nombre de usuario
     $queryUsuario = "SELECT ID_Usuario FROM usuarios WHERE usuario = :nombreUsuario";
     $stmtUsuario = $db->prepare($queryUsuario);
     $stmtUsuario->bindParam(':nombreUsuario', $nombreUsuario);
@@ -19,7 +18,6 @@ if ($nombreUsuario) {
     $usuarioActual = $resultadoUsuario['ID_Usuario'] ?? null;
 
     if ($usuarioActual) {
-        // Consultar los artículos en el carrito del usuario
         $query = "SELECT p.Nombre, dc.Cantidad, dc.Precio FROM detalles_carrito dc
                   INNER JOIN carrito c ON dc.ID_Carrito = c.ID_Carrito
                   INNER JOIN productos p ON dc.ID_Producto = p.ID_Producto

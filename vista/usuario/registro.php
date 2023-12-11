@@ -8,7 +8,7 @@ session_start();
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>GlamGrid</title>
 </head>
 <body>
@@ -20,7 +20,7 @@ session_start();
         <?php
         if (isset($_SESSION['errorMessage'])) {
             echo "<p class='error'>{$_SESSION['errorMessage']}</p>";
-            unset($_SESSION['errorMessage']); // Limpieza el mensaje de error
+            unset($_SESSION['errorMessage']);
         }?>
         <div class="form-group">
             <label for="username">Nombre de Usuario:</label>

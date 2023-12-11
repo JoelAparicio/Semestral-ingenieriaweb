@@ -15,13 +15,11 @@ session_start();
 <?php include_once "headeradmin.php"; ?>
 
 <?php
-// Incluir el archivo de conexión a la base de datos
 require_once '../../config/base_de_datos.php';
 
 $baseDeDatos = new base_de_datos();
 $db = $baseDeDatos->getConnection();
 
-// Consulta para obtener los pedidos con la información del usuario que realizó cada pedido
 $query = "
     SELECT p.ID_Pedido, u.usuario, u.Direccion, p.Fecha_Pedido, p.Estado, p.Total, 
            pr.Nombre AS NombreProducto, pr.Tamano, pr.Color, dp.Cantidad

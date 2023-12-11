@@ -10,13 +10,11 @@
 </head>
 <body>
 <?php
-// Incluir el archivo de conexión a la base de datos
 require_once '../../config/base_de_datos.php';
 
 $baseDeDatos = new base_de_datos();
 $db = $baseDeDatos->getConnection();
 
-// Realizar la consulta para contar los pedidos
 $query = "SELECT COUNT(*) as total_pedidos FROM pedidos";
 $stmt = $db->prepare($query);
 $stmt->execute();
@@ -24,7 +22,6 @@ $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $totalPedidos = $resultado['total_pedidos'] ?? 0;
 
-// Cerrar la conexión
 $baseDeDatos->closeConnection();
 ?>
 
@@ -77,10 +74,10 @@ $baseDeDatos->closeConnection();
             window.location.href = 'indexadmin.php';
         });
         orderButton.addEventListener('click', function() {
-            window.location.href = 'pedidosadmin.php'; // Ajusta según la URL correcta
+            window.location.href = 'pedidosadmin.php';
         });
         productButton.addEventListener('click', function() {
-            window.location.href = 'productosadmin.php'; // Ajusta según la URL correcta
+            window.location.href = 'productosadmin.php';
         });
     });
 </script>

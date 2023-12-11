@@ -1,8 +1,6 @@
 <?php
 session_start();
 require_once '../../config/base_de_datos.php';
-
-// Crear una instancia de la clase base_de_datos y obtener la conexión
 $baseDeDatos = new base_de_datos();
 $db = $baseDeDatos->getConnection();
 
@@ -20,7 +18,6 @@ if (isset($_SESSION['username'])) {
         $userID = $resultadoUsuario['ID_Usuario'];
     }
 }
-// Obtener productos de la categoría 'Camisas'
 $query = "SELECT * FROM productos WHERE ID_Categoria = (SELECT ID_Categoria FROM categorias WHERE Nombre = 'Camisas')";
 $stmt = $db->prepare($query);
 $stmt->execute();

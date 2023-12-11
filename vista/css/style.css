@@ -417,6 +417,7 @@ button[type="submit"]:hover {
 
 /* Estilos para el registro */
 .registro-container {
+    flex: 1;
     max-width: 400px;
     margin: 50px auto;
     margin-bottom: 233px;
@@ -579,6 +580,7 @@ button[type="submit"]:hover {
 
 /* Estilos para carrito */
 .carrito-container {
+    flex: 1;
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
@@ -633,10 +635,10 @@ button[type="submit"]:hover {
 
 .pedidos-container {
     flex: 1;
-    max-width: 1200px; /* O el ancho que prefieras */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #ffffff; /* O el color de fondo que prefieras */
+    background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -646,7 +648,7 @@ button[type="submit"]:hover {
 }
 
 .admin-table-head {
-    background-color: #4E84A6; /* Color de fondo para el encabezado de la tabla */
+    background-color: #4E84A6;
     color: #ffffff;
 }
 
@@ -655,11 +657,11 @@ button[type="submit"]:hover {
 }
 
 .admin-table-row:nth-child(even) {
-    background-color: #f2f2f2; /* Para alternar colores de fondo */
+    background-color: #f2f2f2;
 }
 
 .admin-table-row:hover {
-    background-color: #e1e1e1; /* Color al pasar el mouse */
+    background-color: #e1e1e1;
 }
 
 .admin-table th,
@@ -670,7 +672,7 @@ button[type="submit"]:hover {
 
 .admin-table th {
     position: sticky;
-    top: 0; /* Para mantener el encabezado fijo en la parte superior al desplazar */
+    top: 0;
     z-index: 10;
 }
 
@@ -718,7 +720,7 @@ button[type="submit"]:hover {
 }
 
 .form-group textarea {
-    height: 100px; /* Ajusta la altura según tus necesidades */
+    height: 100px;
 }
 
 .submit-btn {
@@ -737,7 +739,6 @@ button[type="submit"]:hover {
     background-color: #4cae4c;
 }
 
-/* Estilos para mensajes de error o confirmación */
 .message {
     padding: 10px;
     margin-bottom: 20px;

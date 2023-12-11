@@ -35,7 +35,7 @@
         </div>
         <div class="cart-container">
             <img src="../img/carrito.png" alt="Carrito" id="shoppingCart">
-            <span class="cart-badge">0</span> <!-- Etiqueta para la cantidad de artículos -->
+            <span class="cart-badge">0</span>
         </div>
     </div>
 </header>
@@ -77,20 +77,16 @@
             alert("Debe registrarse o ingresar a su cuenta para acceder a esta sección.");
         }
 
-        // Asigna el evento click a cada enlace de categoría
         document.querySelectorAll('.category-link').forEach(function(enlace) {
             enlace.addEventListener('click', function(e) {
                 e.preventDefault();
-                console.log("Enlace clickeado"); // Verifica si se muestra en consola
+                console.log("Enlace clickeado");
                 mostrarMensajeError();
             });
         });
     });
 
 </script>
-
-
-
 
 </body>
 </html>

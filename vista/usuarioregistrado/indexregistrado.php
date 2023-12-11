@@ -1,13 +1,11 @@
 <?php
-session_start(); // Inicia la sesión
-// Comprueba si la cookie existe y aumenta el contador
+session_start();
 if (isset($_COOKIE['login_count'])) {
     $login_count = $_COOKIE['login_count'] + 1;
 } else {
-    $login_count = 1; // Primera vez que inicia sesión
+    $login_count = 1;
 }
 
-// Establece la cookie con el nuevo valor del contador, expira en 30 días
 setcookie('login_count', $login_count, time() + (86400 * 30), "/");
 ?>
 <!doctype html>
@@ -82,7 +80,6 @@ $productos = $data['success'] ? $data['data'] : [];
         <p class="client-name">- Gabriela López</p>
     </div>
 
-    <!-- Añade más testimonios según sea necesario -->
 </section>
 
 

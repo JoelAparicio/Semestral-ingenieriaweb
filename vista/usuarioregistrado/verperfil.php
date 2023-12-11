@@ -1,5 +1,5 @@
 <?php
-session_start(); // Inicia la sesión
+session_start();
 ?>
 <!doctype html>
 <html lang="en">
@@ -40,19 +40,16 @@ session_start(); // Inicia la sesión
 
 <script>
     document.getElementById('botonEditar').addEventListener('click', function() {
-        // Desbloquea los campos
         document.getElementById('email').readOnly = false;
         document.getElementById('direccion').readOnly = false;
 
-        // Oculta el botón "Editar" y muestra el botón "Guardar"
         this.style.display = 'none';
         document.getElementById('botonGuardar').style.display = 'block';
     });
 
-    // El botón "Guardar" ahora simplemente enviará el formulario
     document.getElementById('botonGuardar').addEventListener('click', function() {
         var form = document.getElementById('perfilForm');
-        form.submit(); // Envía el formulario
+        form.submit();
     });
 </script>
 

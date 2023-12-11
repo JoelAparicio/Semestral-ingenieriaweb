@@ -8,7 +8,6 @@ if ($usuarioActual) {
     $baseDeDatos = new base_de_datos();
     $db = $baseDeDatos->getConnection();
 
-    // Obtener el ID_Usuario basado en el nombre de usuario
     $queryUsuario = "SELECT ID_Usuario FROM usuarios WHERE usuario = :usuario";
     $stmtUsuario = $db->prepare($queryUsuario);
     $stmtUsuario->bindParam(':usuario', $usuarioActual);
@@ -17,7 +16,6 @@ if ($usuarioActual) {
     $userID = $resultadoUsuario['ID_Usuario'] ?? null;
 
     if ($userID) {
-        // Consultar la cantidad de artículos en el carrito
         $queryCarrito = "SELECT COUNT(*) as total FROM detalles_carrito WHERE ID_Carrito IN (SELECT ID_Carrito FROM carrito WHERE ID_Usuario = :userID)";
         $stmtCarrito = $db->prepare($queryCarrito);
         $stmtCarrito->bindParam(':userID', $userID);

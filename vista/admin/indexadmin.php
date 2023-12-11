@@ -108,5 +108,4 @@ function moveCarousel(direction) {
 </script>
 </body>
 
-
 </html>

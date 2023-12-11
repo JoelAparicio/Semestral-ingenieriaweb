@@ -26,10 +26,10 @@ $categorias = $stmtCategorias->fetchAll(PDO::FETCH_ASSOC);
 <div class="product-form-container">
     <?php if (isset($_SESSION['message'])): ?>
         <p class="message_success"><?= $_SESSION['message']; ?></p>
-        <?php unset($_SESSION['message']); // Eliminar el mensaje después de mostrarlo ?>
+        <?php unset($_SESSION['message']); ?>
     <?php elseif (isset($_SESSION['error'])): ?>
         <p class="message_error"><?= $_SESSION['error']; ?></p>
-        <?php unset($_SESSION['error']); // Eliminar el mensaje después de mostrarlo ?>
+        <?php unset($_SESSION['error']); ?>
     <?php endif; ?>
     <h1>Añadir Nuevo Producto</h1>
     <form action="../../backend/crearproductobackend.php" method="POST">

@@ -2,8 +2,8 @@
 session_start();
 include __DIR__ . '/../config/base_de_datos.php';
 
-$usuario = $_POST['username']; // Asegúrate de validar y limpiar esta entrada
-$password = $_POST['password']; // Igualmente, valida y limpia esta entrada
+$usuario = $_POST['username'];
+$password = $_POST['password'];
 
 $baseDeDatos = new Base_de_datos();
 $conn = $baseDeDatos->getConnection();
@@ -21,9 +21,9 @@ if ($stmt->rowCount() == 1) {
     $_SESSION['rol'] = $row['Rol'];
 
     if ($row['Rol'] == 'admin') {
-        header("Location: ../vista/admin/indexadmin.php"); // Redirige al admin
+        header("Location: ../vista/admin/indexadmin.php");
     } else {
-        header("Location: ../vista/usuarioregistrado/indexregistrado.php"); // Redirige al usuario normal
+        header("Location: ../vista/usuarioregistrado/indexregistrado.php");
     }
     exit();
 }
