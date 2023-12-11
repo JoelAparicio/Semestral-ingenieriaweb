@@ -18,10 +18,10 @@
         <button id="initButton">Inicio</button>
         <button id="categoryButton">Categorias de ropa</button>
         <div class="category-dropdown-menu" id="categoryMenu">
-            <a href="#">Camisas</a>
-            <a href="#">Pantalones</a>
-            <a href="#">Zapatos</a>
-            <a href="#">Camisetas</a>
+            <a href="#" class="category-link">Camisas</a>
+            <a href="#" class="category-link">Pantalones</a>
+            <a href="#" class="category-link">Zapatos</a>
+            <a href="#" class="category-link">Camisetas</a>
         </div>
     </div>
 
@@ -67,10 +67,23 @@
         });
 
         shoppingCart.addEventListener('click', function() {
-            window.location.href = 'ruta/a/tu/pagina/del/carrito.html';
+            mostrarMensajeError();
         });
         initButton.addEventListener('click', function() {
             window.location.href = 'index.php';
+        });
+
+        function mostrarMensajeError() {
+            alert("Debe registrarse o ingresar a su cuenta para acceder a esta sección.");
+        }
+
+        // Asigna el evento click a cada enlace de categoría
+        document.querySelectorAll('.category-link').forEach(function(enlace) {
+            enlace.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log("Enlace clickeado"); // Verifica si se muestra en consola
+                mostrarMensajeError();
+            });
         });
     });
 

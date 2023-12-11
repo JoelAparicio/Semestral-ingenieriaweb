@@ -76,13 +76,6 @@
     <!-- Añade más testimonios según sea necesario -->
 </section>
 
-
-
-
-
-
-
-
 <?php include_once "footer.php"; ?>
 
 

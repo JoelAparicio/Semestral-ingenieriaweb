@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -14,7 +17,7 @@
 <div class="registro-container">
     <form action="../../backend/registrobackend.php" method="POST">
         <h2>Registro de Usuario</h2>
-        <?php session_start();
+        <?php
         if (isset($_SESSION['errorMessage'])) {
             echo "<p class='error'>{$_SESSION['errorMessage']}</p>";
             unset($_SESSION['errorMessage']); // Limpieza el mensaje de error

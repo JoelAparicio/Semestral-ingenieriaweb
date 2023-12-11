@@ -31,5 +31,5 @@ if ($stmt->rowCount() == 1) {
 $_SESSION['errorMessage'] = 'Autenticación fallida';
 header("Location: ../vista/usuario/login.php");
 exit();
-?>
+
 

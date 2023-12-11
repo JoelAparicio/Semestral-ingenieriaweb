@@ -1,11 +1,5 @@
 <?php
 session_start(); // Inicia la sesión
-
-// Comprueba si el usuario está logueado
-if (!isset($_SESSION['usuario'])) {
-    header("Location: login.php"); // Redirige al login si no está logueado
-    exit();
-}
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,7 +17,7 @@ if (!isset($_SESSION['usuario'])) {
 <form id="perfilForm" class="perfil-container" action="../../backend/editarperfil.php" method="post">
     <div class="perfil-item">
         <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" name="usuario" value="<?php echo htmlspecialchars($_SESSION['usuario']); ?>" readonly>
+        <input type="text" id="usuario" name="usuario" value="<?php echo htmlspecialchars($_SESSION['username']); ?>" readonly>
     </div>
     <div class="perfil-item">
         <label for="email">Email:</label>
@@ -46,22 +40,21 @@ if (!isset($_SESSION['usuario'])) {
 
 <script>
     document.getElementById('botonEditar').addEventListener('click', function() {
-        var usuarioInput = document.getElementById('usuario');
-        var direccionInput = document.getElementById('direccion');
-        var botonEditar = this;
-        var botonGuardar = document.getElementById('botonGuardar');
+        // Desbloquea los campos
+        document.getElementById('email').readOnly = false;
+        document.getElementById('direccion').readOnly = false;
 
-        usuarioInput.readOnly = false;
-        direccionInput.readOnly = false;
-
-        botonEditar.style.display = 'none';
-        botonGuardar.style.display = 'block';
+        // Oculta el botón "Editar" y muestra el botón "Guardar"
+        this.style.display = 'none';
+        document.getElementById('botonGuardar').style.display = 'block';
     });
 
+    // El botón "Guardar" ahora simplemente enviará el formulario
     document.getElementById('botonGuardar').addEventListener('click', function() {
         var form = document.getElementById('perfilForm');
-        form.submit();
+        form.submit(); // Envía el formulario
     });
 </script>
+
 </body>
 </html>
