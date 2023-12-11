@@ -9,20 +9,34 @@
     <title></title>
 </head>
 <body>
+<?php
+// Incluir el archivo de conexión a la base de datos
+require_once '../../config/base_de_datos.php';
+
+$baseDeDatos = new base_de_datos();
+$db = $baseDeDatos->getConnection();
+
+// Realizar la consulta para contar los pedidos
+$query = "SELECT COUNT(*) as total_pedidos FROM pedidos";
+$stmt = $db->prepare($query);
+$stmt->execute();
+$resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$totalPedidos = $resultado['total_pedidos'] ?? 0;
+
+// Cerrar la conexión
+$baseDeDatos->closeConnection();
+?>
+
 <header class="header">
     <div class="logo-container">
         <img src="../img/logo.png" alt="GlamGrid Logo">
     </div>
 
-    <div class="category-container">
+    <div class="buttons-container">
         <button id="initButton">Inicio</button>
-        <button id="categoryButton">Categorias de ropa</button>
-        <div class="category-dropdown-menu" id="categoryMenu">
-            <a href="camisasregistrado.php">Camisas</a>
-            <a href="pantalonesregistrado.php">Pantalones</a>
-            <a href="zapatosregistrado.php">Zapatos</a>
-            <a href="camisetasregistrado.php">Camisetas</a>
-        </div>
+        <button id="orderButton">Pedidos (<?= $totalPedidos ?>)</button>
+        <button id="productButton">Productos</button>
     </div>
 
     <div class="user-cart">
@@ -35,7 +49,6 @@
                 }
                 ?></button></p>
             <div class="user-dropdown-menu" id="userMenu">
-                <a href="../usuarioregistrado/verperfil.php">Ver perfil</a>
                 <a href="../usuario/index.php">Cerrar sesión</a>
             </div>
         </div>
@@ -46,40 +59,31 @@
     document.addEventListener('DOMContentLoaded', function() {
         const userPanel = document.getElementById('userPanel');
         const userMenu = document.getElementById('userMenu');
-        const shoppingCart = document.getElementById('shoppingCart');
-        const categoryButton = document.getElementById('categoryButton');
-        const categoryMenu = document.getElementById('categoryMenu');
         const initButton = document.getElementById('initButton');
+        const orderButton = document.getElementById('orderButton');
+        const productButton = document.getElementById('productButton');
 
         userPanel.addEventListener('click', function() {
             userMenu.style.display = userMenu.style.display === 'block' ? 'none' : 'block';
-        });
-
-        categoryButton.addEventListener('click', function() {
-            categoryMenu.style.display = categoryMenu.style.display === 'block' ? 'none' : 'block';
         });
 
         document.addEventListener('click', function(event) {
             if (!userPanel.contains(event.target) && !userMenu.contains(event.target)) {
                 userMenu.style.display = 'none';
             }
-            if (!categoryButton.contains(event.target) && !categoryMenu.contains(event.target)) {
-                categoryMenu.style.display = 'none';
-            }
         });
 
-        shoppingCart.addEventListener('click', function() {
-            window.location.href = 'carritoregistrado.php';
-        });
         initButton.addEventListener('click', function() {
-            window.location.href = 'indexregistrado.php';
+            window.location.href = 'indexadmin.php';
+        });
+        orderButton.addEventListener('click', function() {
+            window.location.href = 'pedidosadmin.php'; // Ajusta según la URL correcta
+        });
+        productButton.addEventListener('click', function() {
+            window.location.href = 'productosadmin.php'; // Ajusta según la URL correcta
         });
     });
-
 </script>
-
-
-
 
 </body>
 </html>

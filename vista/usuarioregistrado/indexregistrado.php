@@ -1,5 +1,14 @@
 <?php
 session_start(); // Inicia la sesión
+// Comprueba si la cookie existe y aumenta el contador
+if (isset($_COOKIE['login_count'])) {
+    $login_count = $_COOKIE['login_count'] + 1;
+} else {
+    $login_count = 1; // Primera vez que inicia sesión
+}
+
+// Establece la cookie con el nuevo valor del contador, expira en 30 días
+setcookie('login_count', $login_count, time() + (86400 * 30), "/");
 ?>
 <!doctype html>
 <html lang="en">
@@ -77,11 +86,9 @@ $productos = $data['success'] ? $data['data'] : [];
 </section>
 
 
-
-
-
-
-
+<div class="login-count-container">
+    <p>Has estado aqui <?= $login_count ?> veces.</p>
+</div>
 
 <?php include_once "../usuario/footer.php"; ?>
 

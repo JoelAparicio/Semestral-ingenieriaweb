@@ -150,13 +150,36 @@ html, body {
     background-color: #007bff;
     color: white;
     border: none;
-    margin-right: 50px;
+    margin-right: 120px;
     margin-left: -50px;
     padding: 12px 24px;
     border-radius: 4px;
     font-size: 1.2rem;
     cursor: pointer;
 }
+#orderButton{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin-right: 120px;
+    margin-left: -50px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+#productButton{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin-right: 120px;
+    margin-left: -50px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
 #categoryButton {
     background-color: #007bff;
     color: white;
@@ -305,6 +328,21 @@ html, body {
     color: #333;
 }
 
+.login-count-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.login-count-container p {
+    color: #333;
+    font-size: 1rem;
+    margin: 0;
+}
 /* Estilo de index.php */
 
 /* Estilo de login.php */
@@ -540,7 +578,6 @@ button[type="submit"]:hover {
 
 
 /* Estilos para carrito */
-/* Estilo general del contenedor del carrito */
 .carrito-container {
     max-width: 800px;
     margin: 20px auto;
@@ -551,7 +588,6 @@ button[type="submit"]:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo de cada artículo en el carrito */
 .carrito-item {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -566,7 +602,6 @@ button[type="submit"]:hover {
     color: #333;
 }
 
-/* Estilo para el total del carrito */
 .total-carrito {
     text-align: right;
     font-size: 18px;
@@ -592,5 +627,133 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-
 /* Estilos para carrito */
+
+/* Estilos para pedidosadmin */
+
+.pedidos-container {
+    flex: 1;
+    max-width: 1200px; /* O el ancho que prefieras */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* O el color de fondo que prefieras */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table-head {
+    background-color: #4E84A6; /* Color de fondo para el encabezado de la tabla */
+    color: #ffffff;
+}
+
+.admin-table-row {
+    border-bottom: 1px solid #dddddd;
+}
+
+.admin-table-row:nth-child(even) {
+    background-color: #f2f2f2; /* Para alternar colores de fondo */
+}
+
+.admin-table-row:hover {
+    background-color: #e1e1e1; /* Color al pasar el mouse */
+}
+
+.admin-table th,
+.admin-table td {
+    text-align: left;
+    padding: 12px;
+}
+
+.admin-table th {
+    position: sticky;
+    top: 0; /* Para mantener el encabezado fijo en la parte superior al desplazar */
+    z-index: 10;
+}
+
+.admin-table td {
+    color: #333333;
+}
+/* Estilos para pedidosadmin */
+
+
+/* Estilos para productosadmin */
+.product-form-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-form-container h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 100px; /* Ajusta la altura según tus necesidades */
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.submit-btn:hover {
+    background-color: #4cae4c;
+}
+
+/* Estilos para mensajes de error o confirmación */
+.message {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.message_success{
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.message_error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+/* Estilos para productosadmin */

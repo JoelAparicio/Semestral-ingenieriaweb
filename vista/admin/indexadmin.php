@@ -73,18 +73,9 @@ $productos = $data['success'] ? $data['data'] : [];
         <p class="client-name">- Gabriela López</p>
     </div>
 
-    <!-- Añade más testimonios según sea necesario -->
 </section>
 
-
-
-
-
-
-
-
 <?php include_once "../usuario/footer.php"; ?>
-
 
 <script>
 function moveCarousel(direction) {
@@ -94,14 +85,12 @@ function moveCarousel(direction) {
     if (direction === 'next') {
         carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
 
-        // Si llegamos al final, volvemos al principio
         if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
             carousel.scrollTo({ left: 0, behavior: 'smooth' });
         }
     } else {
         carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
 
-        // Si estamos al principio, nos movemos al final
         if (carousel.scrollLeft === 0) {
             carousel.scrollTo({ left: carousel.scrollWidth, behavior: 'smooth' });
         }
