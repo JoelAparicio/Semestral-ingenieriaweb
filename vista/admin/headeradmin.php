@@ -30,7 +30,7 @@ $baseDeDatos->closeConnection();
         <img src="../img/logo.png" alt="GlamGrid Logo">
     </div>
 
-    <div class="buttons-container">
+    <div id="buttons-container">
         <button id="initButton">Inicio</button>
         <button id="orderButton">Pedidos (<?= $totalPedidos ?>)</button>
         <button id="productButton">Productos</button>
