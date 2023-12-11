@@ -106,7 +106,7 @@ if ($usuarioActual) {
         });
 
         shoppingCart.addEventListener('click', function() {
-            window.location.href = 'ruta/a/tu/pagina/del/carrito.html';
+            window.location.href = 'carritoregistrado.php';
         });
         initButton.addEventListener('click', function() {
             window.location.href = 'indexregistrado.php';

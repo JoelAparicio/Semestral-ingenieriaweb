@@ -15,31 +15,29 @@
     </div>
 
     <div class="category-container">
-       <ul class="menu-horizontal">
-            <li><a href="">INICIO</a></li>
-            <li>
-                <a href="">CATEGORIAS DE ROPA</a>
-                <ul class="menu-vertical">
-                    <li><a href=""></a>CAMISAS</li>
-                    <li><a href=""></a>PANTALONES</li>
-                    <li><a href=""></a>ZAPATOS</li>
-                    <li><a href=""></a>CAMISETAS</li>
-                </ul>
-            </li>
-       </ul>
+        <button id="initButton">Inicio</button>
+        <button id="categoryButton">Categorias de ropa</button>
+        <div class="category-dropdown-menu" id="categoryMenu">
+            <a href="camisasregistrado.php">Camisas</a>
+            <a href="pantalonesregistrado.php">Pantalones</a>
+            <a href="zapatosregistrado.php">Zapatos</a>
+            <a href="camisetasregistrado.php">Camisetas</a>
+        </div>
     </div>
 
     <div class="user-cart">
         <div class="user-panel-container">
             <img src="../img/usuario.png" alt="Panel de Usuario" id="userPanel">
+            <p id="nombreUsuario">Bienvenido, <?php
+                if (isset($_SESSION['username'])) {
+                    $usuario= htmlspecialchars($_SESSION['username']);
+                    echo $usuario;
+                }
+                ?></button></p>
             <div class="user-dropdown-menu" id="userMenu">
-                <a href="#">Ver perfil</a>
-                <a href="#">Cerrar sesión</a>
+                <a href="../usuarioregistrado/verperfil.php">Ver perfil</a>
+                <a href="../usuario/index.php">Cerrar sesión</a>
             </div>
-        </div>
-        <div class="cart-container">
-            <img src="../img/carrito.png" alt="Carrito" id="shoppingCart">
-            <span class="cart-badge">0</span> <!-- Etiqueta para la cantidad de artículos -->
         </div>
     </div>
 </header>
@@ -71,10 +69,10 @@
         });
 
         shoppingCart.addEventListener('click', function() {
-            window.location.href = 'ruta/a/tu/pagina/del/carrito.html';
+            window.location.href = 'carritoregistrado.php';
         });
         initButton.addEventListener('click', function() {
-            window.location.href = 'indexadmin.php';
+            window.location.href = 'indexregistrado.php';
         });
     });
 

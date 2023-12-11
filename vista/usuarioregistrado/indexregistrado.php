@@ -14,32 +14,29 @@ session_start(); // Inicia la sesión
 <body>
 <?php include_once "headerregistrado.php"; ?>
 
+<?php
+$urlApi = 'http://localhost/Semestral-ingenieriaweb/backend/api/indexapi.php';
+$jsonData = file_get_contents($urlApi);
+$data = json_decode($jsonData, true);
+$productos = $data['success'] ? $data['data'] : [];
+?>
+
 <div class="popular-items-carousel">
     <h1>Compras Más Populares</h1>
     <div class="carousel" id="popularCarousel">
-        <div class="carousel-item" data-index="0">
-            <img src="https://m.media-amazon.com/images/I/71xdSLvi8ML._AC_UF894,1000_QL80_.jpg" alt="Producto 1">
-            <h2>Jeans de hombre</h2>
-            <button class="details-button" onclick="toggleDetails(0)">Ver más detalles</button>
-            <div class="product-details" id="details0">
-                <p>Talla: M</p>
-                <p>Color: Azul</p>
-                <p>Stock: Disponible</p>
-                <!-- Más detalles aquí -->
+        <?php foreach ($productos as $index => $producto): ?>
+            <div class="carousel-item" data-index="<?= $index ?>">
+                <img src="../img/<?= htmlspecialchars($producto['Nombre']) ?>.jpg">
+                <h2><?= htmlspecialchars($producto['Nombre']) ?></h2>
+                <button class="details-button" onclick="toggleDetails(<?= $index ?>)">Ver más detalles</button>
+                <div class="product-details" id="details<?= $index ?>">
+                    <p>Descripción: <?= htmlspecialchars($producto['Descripcion']) ?></p>
+                    <p>Precio: $<?= htmlspecialchars($producto['Precio']) ?></p>
+                    <p>Tamaño: <?= htmlspecialchars($producto['Tamano']) ?></p>
+                    <p>Color: <?= htmlspecialchars($producto['Color']) ?></p>
+                </div>
             </div>
-        </div>
-        <div class="carousel-item" data-index="1">
-            <img src="https://img.freepik.com/fotos-premium/plantilla-maqueta-maqueta-hombre-camiseta-negra-sus-disenos_398492-4748.jpg" alt="Producto 2">
-            <h2>Camiseta negra</h2>
-            <button class="details-button" onclick="toggleDetails(0)">Ver más detalles</button>
-            <div class="product-details" id="details0">
-                <p>Talla: M</p>
-                <p>Color: Azul</p>
-                <p>Stock: Disponible</p>
-                <!-- Más detalles aquí -->
-            </div>
-        </div>
-        <!-- Agrega más elementos de carrusel según sea necesario -->
+        <?php endforeach; ?>
     </div>
     <button class="carousel-control prev" onclick="moveCarousel('prev')">❮</button>
     <button class="carousel-control next" onclick="moveCarousel('next')">❯</button>

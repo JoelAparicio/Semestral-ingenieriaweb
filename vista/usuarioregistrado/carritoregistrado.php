@@ -2,27 +2,36 @@
 session_start();
 require_once '../../config/base_de_datos.php';
 
-$usuarioActual = $_SESSION['ID_Usuario'] ?? null;
+$nombreUsuario = $_SESSION['username'] ?? null;
 $articulosCarrito = [];
 $total = 0;
 
-if ($usuarioActual) {
+if ($nombreUsuario) {
     $baseDeDatos = new base_de_datos();
     $db = $baseDeDatos->getConnection();
 
-    // Consultar los artículos en el carrito del usuario
-    $query = "SELECT p.Nombre, dc.Cantidad, dc.Precio FROM detalles_carrito dc
-              INNER JOIN carrito c ON dc.ID_Carrito = c.ID_Carrito
-              INNER JOIN productos p ON dc.ID_Producto = p.ID_Producto
-              WHERE c.ID_Usuario = :usuarioActual";
-    $stmt = $db->prepare($query);
-    $stmt->bindParam(':usuarioActual', $usuarioActual);
-    $stmt->execute();
-    $articulosCarrito = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // Obtener ID_Usuario a partir del nombre de usuario
+    $queryUsuario = "SELECT ID_Usuario FROM usuarios WHERE usuario = :nombreUsuario";
+    $stmtUsuario = $db->prepare($queryUsuario);
+    $stmtUsuario->bindParam(':nombreUsuario', $nombreUsuario);
+    $stmtUsuario->execute();
+    $resultadoUsuario = $stmtUsuario->fetch(PDO::FETCH_ASSOC);
+    $usuarioActual = $resultadoUsuario['ID_Usuario'] ?? null;
 
-    // Calcular el total
-    foreach ($articulosCarrito as $item) {
-        $total += $item['Cantidad'] * $item['Precio'];
+    if ($usuarioActual) {
+        // Consultar los artículos en el carrito del usuario
+        $query = "SELECT p.Nombre, dc.Cantidad, dc.Precio FROM detalles_carrito dc
+                  INNER JOIN carrito c ON dc.ID_Carrito = c.ID_Carrito
+                  INNER JOIN productos p ON dc.ID_Producto = p.ID_Producto
+                  WHERE c.ID_Usuario = :usuarioActual";
+        $stmt = $db->prepare($query);
+        $stmt->bindParam(':usuarioActual', $usuarioActual);
+        $stmt->execute();
+        $articulosCarrito = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($articulosCarrito as $item) {
+            $total += $item['Cantidad'] * $item['Precio'];
+        }
     }
 
     $baseDeDatos->closeConnection();
@@ -52,6 +61,10 @@ if ($usuarioActual) {
     <div class="total-carrito">
         <span>Total: $<?= htmlspecialchars($total) ?></span>
     </div>
+    <form action="../../backend/carritobackend.php" method="post">
+        <button type="submit" name="accion" value="realizarPedido" class="btn-accion">Realizar Pedido</button>
+        <button type="submit" name="accion" value="vaciarCarrito" class="btn-accion">Vaciar Carrito</button>
+    </form>
 </div>
 
 <?php include_once "../usuario/footer.php"; ?>
